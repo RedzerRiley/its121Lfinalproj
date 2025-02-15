@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Contact - Mobile Features</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <a href="main.html">
+                <img src="logo4.png" alt="logo">
+            </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Get in Touch</h1>
+                <p>We'd love to hear from you</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-box">
+                        <h3>Visit Us</h3>
+                        <p>123 Tech Street</p>
+                        <p>Silicon Valley, CA 94025</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Call Us</h3>
+                        <p>+1 (555) 123-4567</p>
+                        <p>Mon-Fri, 9:00-18:00</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Email Us</h3>
+                        <p>info@example.com</p>
+                        <p>support@example.com</p>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.7179895199024!2d121.0150212!3d14.5664614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9080e6f2abd%3A0x1d5b9be15aad02!2sMap%C3%BAa%20University%20Makati!5e1!3m2!1sen!2sph!4v1739164492396!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="success-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your message has been sent successfully.</p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name.length < 2) {
+                alert('Please enter a valid name');
+                return false;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            if (message.length < 10) {
+                alert('Message must be at least 10 characters long');
+                return false;
+            }
+            
+            document.getElementById('success-popup').style.display = 'block';
+            return false; 
+        }
+        
+        function closePopup() {
+            document.getElementById('success-popup').style.display = 'none';
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</body>
+</html>

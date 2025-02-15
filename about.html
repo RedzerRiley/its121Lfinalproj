@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us - Mobile Features</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <a href="main.html">
+                <img src="logo4.png" alt="logo">
+            </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="image.png" alt="Mobile Feature 1">
+                    </div>
+                    <div class="slide">
+                        <img src="image2.png" alt="Mobile Feature 2">
+                    </div>
+                    <div class="slide">
+                        <img src="image4.png" alt="Mobile Feature 3">
+                    </div>
+                    <div class="slide">
+                        <img src="phone4.png" alt="Mobile Feature 4">
+                    </div>
+                </div>
+            </div>
+              <div class="about-section">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Welcome to NOVO, where innovation meets connectivity. We are a next-generation mobile technology company committed to delivering cutting-edge devices and seamless communication solutions.</p>
+                        
+                        <h3>Our Mission</h3>
+                         <p>Welcome to NOVO, where innovation meets connectivity. We are a next-generation mobile technology company committed to delivering cutting-edge devices and seamless communication solutions.</p>
+                    </p>
+                        
+                        <h3>Our Vision</h3>
+                        <p>To be a leader in mobile innovation, shaping the future of connectivity through smart, efficient, and customer-centric solutions.</p>
+                        
+                        
+                        <h3>Our Commitment</h3>
+                        <p>At NOVO, we prioritize quality, innovation, and customer satisfaction. We strive to provide mobile solutions that not only connect but also inspire and elevate the way you communicate.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="award.png" alt="Gallery Image 1" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="award2.png" alt="Gallery Image 2" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="award3.png" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="award4.png" alt="Gallery Image 4" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="award5.png" alt="Gallery Image 4" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="Lightbox Image">
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src) {
+    let lightbox = document.getElementById('lightbox');
+    let lightboxImg = document.getElementById('lightbox-img');
+    document.getElementById('lightbox').style.display = 'flex';
+    document.getElementById('lightbox-img').src = src;
+    
+    
+    document.body.style.overflow = 'hidden';
+    
+    lightbox.style.display = 'flex';
+    lightboxImg.src = src;
+
+    lightbox.addEventListener('click', function(event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+    </script>
+</body>
+</html>
